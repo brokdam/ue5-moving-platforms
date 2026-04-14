@@ -13,11 +13,12 @@ public:
 	AMyActor02();
 
 protected:
-	//virtual void BeginPlay() override;
 	USceneComponent* SceneRoot;
 	UStaticMeshComponent* StaticMeshComp;
 
-	//public:	
-		//virtual void Tick(float DeltaTime) override;
+	float RotationSpeed;
+
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 };

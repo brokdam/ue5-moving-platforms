@@ -2,7 +2,7 @@
 
 AMyActor::AMyActor()
 {
-	//PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
 	SetRootComponent(SceneRoot);
@@ -23,15 +23,16 @@ AMyActor::AMyActor()
 	}
 }
 
-/* void AMyActor01::BeginPlay()
+void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
+	FVector NewLocation(0.0f);
+	FRotator NewRotation(0.0f);
+	SetActorScale3D(FVector(50.0f));
 
 }
 
-void AMyActor01::Tick(float DeltaTime)
+void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
-*/

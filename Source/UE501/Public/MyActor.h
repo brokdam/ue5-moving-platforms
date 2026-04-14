@@ -13,11 +13,9 @@ public:
 	AMyActor();
 
 protected:
-	//virtual void BeginPlay() override;
 	USceneComponent* SceneRoot;
 	UStaticMeshComponent* StaticMeshComp;
 
-	//public:	
-		//virtual void Tick(float DeltaTime) override;
-
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 };
