@@ -13,7 +13,10 @@ public:
 	AMyActor();
 
 protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USceneComponent* SceneRoot;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStaticMeshComponent* StaticMeshComp;
 
 	virtual void BeginPlay() override;
@@ -21,7 +24,10 @@ protected:
 
 public:
 	// 이동 관련 변수들 추가
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement|Translation")
 	FVector MoveVelocity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement|Translation")
 	float MaxRange;
 
 private: 

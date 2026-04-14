@@ -30,8 +30,7 @@ AMyActor::AMyActor()
 void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
-	FVector NewLocation(0.0f);
-	FRotator NewRotation(0.0f);
+
 	SetActorScale3D(FVector(50.0f));
 
 	// 게임 시작 시점의 현재 위치를 이동 기준점으로 저장
@@ -53,10 +52,14 @@ void AMyActor::Tick(float DeltaTime)
 	// 설정한 한계치 넘어가면 방향을 반전시킴
 	if (DistanceMoved >= MaxRange)
 	{
-		MoveVelocity = -MoveVelocity; 
 
 		// 정확한 왕복을 위해 시작 위치 갱신
 		FVector MoveDirection = MoveVelocity.GetSafeNormal();
-		StartLocation = StartLocation + (-MoveDirection * MaxRange);
+		FVector ExactBoundary = StartLocation + (MoveDirection * MaxRange);
+		SetActorLocation(ExactBoundary);
+
+		MoveVelocity = -MoveVelocity;
+
+		StartLocation = ExactBoundary;
 	}
 }

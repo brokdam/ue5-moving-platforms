@@ -2,6 +2,8 @@
 
 AMyActor02::AMyActor02()
 {
+	PrimaryActorTick.bCanEverTick = true;
+
 	SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
 	SetRootComponent(SceneRoot);
 
@@ -20,7 +22,6 @@ AMyActor02::AMyActor02()
 		StaticMeshComp->SetMaterial(0, MaterialAsset.Object);
 	}
 
-	PrimaryActorTick.bCanEverTick = true;
 	RotationSpeed = 90.0f;
 }
 
@@ -29,8 +30,6 @@ void AMyActor02::BeginPlay()
 {
 	Super::BeginPlay();
 
-	FVector NewLocation(0.0f, 0.0f, 6576.0f);
-	FRotator NewRotation(0.0f);
 	SetActorScale3D(FVector(30.0f));
 
 }

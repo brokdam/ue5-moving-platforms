@@ -13,9 +13,13 @@ public:
 	AMyActor02();
 
 protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item|Components")
 	USceneComponent* SceneRoot;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item|Components")
 	UStaticMeshComponent* StaticMeshComp;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement|Rotation")
 	float RotationSpeed;
 
 	virtual void BeginPlay() override;
