@@ -18,4 +18,13 @@ protected:
 
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+
+public:
+	// 이동 관련 변수들 추가
+	FVector MoveVelocity;
+	float MaxRange;
+
+private: 
+	// 왕복 기준점 저장용 변수
+	FVector StartLocation;
 };
